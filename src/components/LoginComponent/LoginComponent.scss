@@ -1,0 +1,55 @@
+h1 {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.container {
+  width: 20%;
+  min-height: 380px;
+  border: 2px solid white;
+  margin: 24px auto;
+  background: #ffffff;
+  box-shadow: 0 0 4px 6px #bbbaac;
+  border-radius: 12px;
+  display: block;
+}
+
+#PasswordValue,
+#NameValue {
+  width: 180px;
+  outline: none;
+  border-radius: 0;
+  background: #ced1dd;
+  border: none;
+  //box-shadow: inset 0 0 0 8px white;
+  padding: 16px;
+  margin: 12px auto;
+  display: block;
+}
+
+#Login,
+#SignUp {
+  width: 210px;
+  padding: 16px;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  margin: 12px auto;
+  color: white;
+  display: block;
+  box-shadow: none;
+  background-color: blue;
+}
+
+#Login:active,
+#SignUp:active {
+  padding: 24px;
+  box-shadow: inset 0 0 0 8px blue, inset 0 0 8px 8px white;
+}
+
+.span {
+  text-align: center;
+  color: blue;
+  margin: 0 auto;
+  display: block;
+}

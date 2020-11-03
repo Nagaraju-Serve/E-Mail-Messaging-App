@@ -1,0 +1,131 @@
+.card {
+  width: 100%;
+  border: 2px solid white;
+  background: #ffffff;
+  box-shadow: 0 0 4px 4px skyblue;
+  border-radius: 12px;
+}
+
+.data {
+  margin: 0;
+}
+
+.Header {
+  list-style-type: none;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  background-color: #447fa9;
+  border-radius: 50%;
+  position: relative;
+  top: 20px;
+}
+
+.circleData {
+  text-align: center;
+  font-weight: 600;
+  color: black;
+  text-shadow: 1px 1px 2px white;
+  margin: 24px 12px 24px 12px;
+  display: grid;
+  padding: 20px 0 20px 0;
+  cursor: pointer;
+}
+
+.Subject {
+  position: relative;
+  bottom: 100px;
+  margin: 24px auto;
+  text-align: center;
+}
+
+.Name {
+  position: relative;
+  bottom: 104px;
+  margin: 24px auto;
+  left: 64px;
+  cursor: pointer;
+}
+
+.Date {
+  position: relative;
+  bottom: 124px;
+  margin: 24px auto;
+  left: 64px;
+}
+
+.Time {
+  position: relative;
+  bottom: 164px;
+  margin: 24px auto;
+  left: 168px;
+}
+
+.Recipient {
+  position: relative;
+  bottom: 184px;
+  margin: 24px auto;
+  left: 64px;
+  cursor: pointer;
+}
+
+.CC {
+  position: relative;
+  bottom: 204px;
+  margin: 24px auto;
+  left: 64px;
+}
+
+.Text {
+  position: relative;
+  bottom: 172px;
+  margin: 24px auto;
+  left: 64px;
+  cursor: pointer;
+}
+
+.Data {
+  bottom: 140px;
+  position: relative;
+  left: 170px;
+}
+
+.Data::after {
+  left: 120px;
+  position: relative;
+}
+
+.footer {
+  display: grid;
+  margin: 0 auto;
+  left: 34px;
+  position: relative;
+  bottom: 60px;
+}
+
+.Salutation,
+.SalutationName {
+  float: left;
+  position: relative;
+}
+
+.btn {
+  left: 20px;
+  position: relative;
+}
+
+.Reply,
+.ReplyAll,
+.Forward {
+  width: fit-content;
+  height: 32px;
+  color: white;
+  background: #0078d4;
+  margin: 12px;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 12px 12px 12px;
+  cursor: pointer;
+}

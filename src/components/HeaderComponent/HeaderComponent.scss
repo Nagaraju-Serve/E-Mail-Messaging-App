@@ -1,0 +1,82 @@
+.HeaderComponent {
+  grid-area: 1/1/1/4;
+  width: 100%;
+}
+
+.Header {
+  margin: 0;
+  width: 97%;
+  height: 80px;
+  display: grid;
+  grid-template-columns: 15% 30% auto 20% 8%;
+  grid-area: 1/1/1/5;
+  background: blue;
+  box-shadow: 0 4px yellow;
+}
+
+.rightlist {
+  list-style-type: none;
+  color: white;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.account-icon {
+  grid-area: 1/5/1/5;
+  list-style-type: none;
+  color: white;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+.Header-Icons {
+  left: 56px;
+  position: relative;
+  margin-top: 8px;
+  grid-area: 1/4/1/4;
+  display: grid;
+  grid-template-columns: 15% 15% 15% 15% 15%;
+  cursor: pointer;
+}
+
+.name {
+  margin-top: 16px;
+  right: 48px;
+  position: relative;
+}
+
+.inputField {
+  display: grid;
+  grid-template-columns: 10% auto;
+}
+
+.AppIcon {
+  top: 6px;
+  position: relative;
+  margin-right: 20px;
+}
+
+input[type="search"] {
+  color: blue;
+  width: 100%;
+  height: 32px;
+  background: skyblue;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  padding-left: 36px;
+  right: 32px;
+  grid-area: 1/1/4/4;
+  top: 4px;
+  position: relative;
+  cursor: pointer;
+}
+
+.SearchIcon {
+  top: 10px;
+  right: 32px;
+  position: relative;
+  color: blue;
+  grid-area: 1/1/1/1;
+  cursor: pointer;
+}

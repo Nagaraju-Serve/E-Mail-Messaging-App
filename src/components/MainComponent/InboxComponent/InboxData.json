@@ -1,0 +1,50 @@
+{
+  "inbox": [
+    {
+      "flag": "true",
+      "date": "20-10-2010",
+      "time": "17:30",
+      "sendername": "abdul rahman",
+      "subject": "subject_fall_here",
+      "attachments": "true",
+      "id": 1
+    },
+    {
+      "flag": "false",
+      "date": "20-10-2020",
+      "time": "17:30",
+      "sendername": "zaid",
+      "subject": "subject_fall_here",
+      "attachments": "true",
+      "id": 2
+    },
+    {
+      "flag": "true",
+      "date": "20-10-2019",
+      "time": "17:30",
+      "sendername": "nameofsender",
+      "subject": "subject_fall_here",
+      "attachments": "true",
+      "id": 3
+    },
+    {
+      "flag": "true",
+      "date": "23-10-2020",
+      "time": "17:30",
+      "sendername": "postman",
+      "subject": "postman email",
+      "attachments": "true",
+      "id": 4
+    },
+    {
+      "sendername": "aaab",
+      "date": "05-02-2018",
+      "time": "01:15",
+      "cc": "bbb",
+      "attachments": "false",
+      "subject": "test sub",
+      "detail": "zzz zzzz",
+      "id": 5
+    }
+  ]
+}

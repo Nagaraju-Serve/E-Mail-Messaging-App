@@ -1,1 +1,25 @@
-.DeletedComponent {}
+.DeletedComponent {
+}
+
+.reactsvg {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+}
+.reactsvg:hover {
+  background-color: blueviolet;
+  fill: red;
+  color: aquamarine;
+}
+
+.svg {
+  width: 70px;
+  height: 70px;
+}
+.svg:hover {
+  fill: red;
+}
+
+svg {
+  border: 1px solid #aaa;
+}

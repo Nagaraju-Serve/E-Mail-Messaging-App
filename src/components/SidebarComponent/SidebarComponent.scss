@@ -5,7 +5,11 @@
 
 .listItems {
   background: #18a0fb;
+<<<<<<< HEAD
   height: 540px;
+=======
+  height: 600px;
+>>>>>>> f440dd714fae1ec1d3145ce8f2912d4f03d51eac
   list-style-type: none;
   margin-top: 4px;
   margin-bottom: 0;
@@ -39,6 +43,15 @@
   position: relative;
   color: white;
   font-size: 400px;
+}
+
+.SendRoundedIcon:hover {
+  fill: green;
+}
+
+.SendRoundedIcon {
+  width: 400px;
+  height: 200px;
 }
 
 .SendRoundedIcon:hover {

@@ -1,61 +1,56 @@
+@import "./Sidebar-Icons";
+@import "../../Styles/Sizes";
+@import "../../Styles/Literals";
+@import "../../Styles/grid";
+
+$height: 540px;
+
+$sidebar-colors: (
+  Bg-color: #18a0fb,
+  shadowBackground: black,
+  activeShadowBackground: white,
+);
+
 .main {
-  display: grid;
-  grid-template-columns: 12% 50% auto;
+  @include grid-display(grid);
+  @include grid-templates(12% 50% auto, auto);
+  width: 100%;
+  //grid-template-columns: 12% 50% auto;
 }
 
 .listItems {
-  background: #18a0fb;
-  height: 540px;
-  height: 600px;
-  list-style-type: none;
-  margin-top: 4px;
-  margin-bottom: 0;
+  background: map-get($sidebar-colors, Bg-color);
+  height: $height;
+  position: Key(relative);
+  list-style-type: Key(list-style-type);
+  margin-top: size(small);
+  margin-bottom: size(verysmall);
 }
 
 .li {
-  list-style-type: none;
-  padding: 20px 12px;
-  text-shadow: 0 2px 2px black;
-  :active {
-    box-shadow: 0 4px white;
+  padding: size(extralarge) size(extramedium);
+  text-shadow: size(verysmall) size(extrasmall) size(extrasmall)
+    map-get($sidebar-colors, shadowBackground);
+
+  &:active {
+    box-shadow: size(verysmall) size(small)
+      map-get($sidebar-colors, activeShadowBackground);
   }
 }
 
-.listItem {
-  right: 20px;
-  position: relative;
-  color: white;
+@mixin listitem($color) {
+  right: size(extralarge);
+  position: Key(position);
   text-decoration: none;
+  color: $color;
+}
+
+.listItem {
+  @include listitem(white);
 }
 
 .Component {
   grid-area: 2/2/2/3;
-  margin-top: 16px;
-  margin-left: 16px;
-}
-
-.Sidebar-Icons {
-  right: 32px;
-  top: 6px;
-  position: relative;
-  color: white;
-  font-size: 400px;
-}
-
-.SendRoundedIcon:hover {
-  fill: green;
-}
-
-.SendRoundedIcon {
-  width: 400px;
-  height: 200px;
-}
-
-.SendRoundedIcon:hover {
-  fill: green;
-}
-
-.SendRoundedIcon {
-  width: 400px;
-  height: 200px;
+  margin-top: size(large);
+  margin-left: size(large);
 }

@@ -1,86 +1,113 @@
-import React from 'react';
-import SidebarComponent from '../SidebarComponent/SidebarComponent';
-import SignupComponent from '../SignupComponent/SignupComponent';
-import './LoginComponent.scss';
+import React from "react";
+import SidebarComponent from "../SidebarComponent/SidebarComponent";
+import SignupComponent from "../SignupComponent/SignupComponent";
+import "./LoginComponent.scss";
 
-export interface ILoginComponentProps {
-
-}
+export interface ILoginComponentProps {}
 
 export interface ILoginComponentState {
-  NameValue: string;
-  PasswordValue: string;
-  Showform: boolean;
-  ShowMessage: boolean;
-  ShowSignUp: boolean;
+  nameValue: string;
+  passwordValue: string;
+  showForm: boolean;
+  showMessage: boolean;
+  showSignUp: boolean;
 }
 
-export default class LoginComponent extends React.Component<ILoginComponentProps, ILoginComponentState> {
-
+export default class LoginComponent extends React.Component<
+  ILoginComponentProps,
+  ILoginComponentState
+> {
   constructor(props: ILoginComponentProps) {
-    super(props)
+    super(props);
     this.state = {
-      NameValue: "Enter Name",
-      PasswordValue: "Enter Password",
-      Showform: true,
-      ShowMessage: true,
-      ShowSignUp: true
-    }
+      nameValue: "Enter Name",
+      passwordValue: "Enter Password",
+      showForm: true,
+      showMessage: true,
+      showSignUp: true,
+    };
   }
 
-  NameHandler = (e: any) => {
+  nameHandler = (e: any) => {
     this.setState({
-      NameValue: e.target.value
+      nameValue: e.target.value,
     });
     console.log(e.target.name);
-  }
+  };
 
-  PasswordHandler = (e: any) => {
+  passwordHandler = (e: any) => {
     this.setState({
-      PasswordValue: e.target.value
+      passwordValue: e.target.value,
     });
     console.log(e.target.name, e.target.value);
-  }
+  };
 
-  LoginHandler = (e: any) => {
+  loginHandler = (e: any) => {
     this.setState({
-      ShowMessage: false,
-      Showform: false
-    })
-    console.log('Hai', this.state.NameValue, this.state.PasswordValue);
-  }
-
-  SignUpHandler = () => {
-    this.setState({
-      NameValue: "Enter Name",
-      PasswordValue: "Enter Password",
-      Showform: false,
-      ShowSignUp: false
+      showMessage: false,
+      showForm: false,
     });
-  }
+    console.log("Hai", this.state.nameValue, this.state.passwordValue);
+  };
+
+  signUpHandler = () => {
+    this.setState({
+      nameValue: "Enter Name",
+      passwordValue: "Enter Password",
+      showForm: false,
+      showSignUp: false,
+    });
+  };
 
   render() {
-
     return (
       <div data-testid="LoginComponent">
-        {
-          this.state.ShowMessage === false && document.getElementById("name")?.innerHTML !== ' ' ? <div><SidebarComponent /></div> : <span className="span"> Please Enter Name and Password for Login </span>
-        }
-        {this.state.Showform === true ?
-          <div className="container">
+        {this.state.showMessage === false &&
+        document.getElementById("name")?.innerHTML !== " " ? (
+          <div>
+            <SidebarComponent />
+          </div>
+        ) : (
+          <span className="login-span">
+            Please Enter Name and Password for Login
+          </span>
+        )}
+        {this.state.showForm === true ? (
+          <div className="login-container">
             <h1>Welcome </h1>
-            <form onSubmit={this.LoginHandler}>
-              <input type="email" id="name" className="NameValue" autoComplete="off" onChange={this.NameHandler} placeholder={this.state.NameValue} />
-              <input type="password" id="password" className="PasswordValue" onChange={this.PasswordHandler} placeholder={this.state.PasswordValue} />
-              <button type="submit" id="Login">Login</button>
+            <form onSubmit={this.loginHandler}>
+              <input
+                type="email"
+                id="name"
+                className="login-name"
+                autoComplete="off"
+                onChange={this.nameHandler}
+                placeholder={this.state.nameValue}
+              />
+              <input
+                type="password"
+                id="password"
+                className="login-password"
+                onChange={this.passwordHandler}
+                placeholder={this.state.passwordValue}
+              />
+              <button type="submit" className="login-button">
+                Login
+              </button>
             </form>
-            <button type="submit" id="SignUp" onClick={this.SignUpHandler}>SignUp</button>
-          </div> : ''
-        }
-        {
-          this.state.ShowSignUp === false ? <SignupComponent /> : ""
-        }
+            <button
+              type="submit"
+              className="login-button"
+              onClick={this.signUpHandler}
+            >
+              SignUp
+            </button>
+          </div>
+        ) : (
+          ""
+        )}
+        {this.state.showSignUp === false ? <SignupComponent /> : ""}
       </div>
-    )
+    );
   }
 }

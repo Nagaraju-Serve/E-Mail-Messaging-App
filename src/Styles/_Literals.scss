@@ -1,0 +1,17 @@
+$Keys: (
+  position: relative,
+  cursor: pointer,
+  border: none,
+  outline: none,
+  list-style-type: none,
+  text-align: center,
+  font-family: sans-serif,
+);
+
+@function Key($key) {
+  @if map-has-key($Keys, $key) {
+    @return map-get($Keys, $key);
+  }
+  @warn "Unknown `#{$key}` in $Keys.";
+  @return error;
+}

@@ -1,9 +1,13 @@
+@import "../../../Styles/Sizes";
+@import "../../../Styles/Literals";
+@import "../../../Styles/grid";
+
 .maindiv {
   width: 100%;
-  border: 2px solid white;
+  border: size(extrasmall) solid white;
   background: #ffffff;
-  box-shadow: 0 0 4px 4px skyblue;
-  border-radius: 12px;
+  box-shadow: size(verysmall) size(verysmall) size(small) size(small) skyblue;
+  border-radius: size(extramedium);
 }
 
 .rows {
@@ -11,11 +15,11 @@
 }
 
 .grid-container {
-  display: grid;
+  @include grid-display(grid);
   grid-template-columns: 5% 70% auto auto auto auto;
-  grid-gap: 0;
-  padding: 2px;
-  box-shadow: 0 2px grey;
+  grid-gap: size(verysmall);
+  padding: size(extrasmall);
+  box-shadow: size(verysmall) size(extrasmall) grey;
 }
 
 .check {
@@ -24,8 +28,8 @@
 
 .senderName {
   grid-area: 1/2/1/2;
-  top: 20px;
-  position: relative;
+  top: size(extralarge);
+  position: Key(position);
 }
 
 .subject {

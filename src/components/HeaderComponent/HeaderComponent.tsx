@@ -13,8 +13,8 @@ import "./HeaderComponent.scss";
 export interface IHeaderComponentProps {}
 
 export interface IHeaderComponentState {
-  UserOptions: boolean;
-  UserSettings: boolean;
+  userOptions: boolean;
+  userSettings: boolean;
 }
 
 export default class HeaderComponent extends React.Component<
@@ -24,67 +24,68 @@ export default class HeaderComponent extends React.Component<
   constructor(props: IHeaderComponentProps) {
     super(props);
     this.state = {
-      UserOptions: false,
-      UserSettings: false,
+      userOptions: false,
+      userSettings: false,
     };
   }
-  SettingsHandler = (e: any) => {
+
+  settingsHandler = (e: any) => {
     e.preventDefault();
     this.setState({
-      UserSettings: true,
+      userSettings: true,
     });
   };
 
-  ProfileHandler = (e: any) => {
+  profileHandler = (e: any) => {
     e.preventDefault();
     this.setState({
-      UserOptions: true,
+      userOptions: true,
     });
   };
 
   render() {
     return (
-      <div className="HeaderComponent" data-testid="HeaderComponent">
-        <ul className="Header">
-          <li className="name rightlist">
-            <AppsOutlined className="AppIcon"></AppsOutlined> Outlook
+      <div className="header-component" data-testid="HeaderComponent">
+        <ul className="header">
+          <li className="header-name header-rightlist">
+            <AppsOutlined className="header-app-icon" /> Outlook
           </li>
-          <li className="rightlist inputField">
+          <li className="header-rightlist header-input-field">
             <input type="search" value="Search" />
-            <SearchIcon className="SearchIcon"></SearchIcon>
+            <SearchIcon className="header-search-icon" />
           </li>
-          <div className="Header-Icons">
-            <li className="rightlist">
-              <CalendarToday></CalendarToday>
+          <div className="header-icons">
+            <li className="header-rightlist">
+              <CalendarToday />
             </li>
-            <li className="rightlist">
-              <NotificationsNoneRounded></NotificationsNoneRounded>
+            <li className="header-rightlist">
+              <NotificationsNoneRounded />
             </li>
-            <li className="rightlist">
-              <HelpOutline></HelpOutline>
+            <li className="header-rightlist">
+              <HelpOutline />
             </li>
-            <li className="rightlist">
-              <Settings onClick={this.SettingsHandler}></Settings>
-              {this.state.UserSettings === true ? (
+            <li className="header-rightlist">
+              <Settings onClick={this.settingsHandler}></Settings>
+              {this.state.userSettings === true ? (
                 <div>
-                  <a>Change Password </a>
-                  <a>Account Settings</a>
+                  <a href="https://www.google.com">Change Password </a>
+                  <a href="https://www.google.com">Account Settings</a>
                 </div>
               ) : (
                 ""
               )}
             </li>
           </div>
-          <li className="account-icon">
+          <li className="header-account-icon">
             <AccountCircleIcon
-              className="Icon"
-              onClick={this.ProfileHandler}
+              className="header-icon"
+              onClick={this.profileHandler}
             ></AccountCircleIcon>
-            {this.state.UserOptions === true ? (
+            {this.state.userOptions === true ? (
               <div>
-                <a>Add Another Account</a>
-                <a>Manage Your Google Account</a>
-                <a>Logout</a>
+                <a href="https://www.google.com">Add Another Account</a>
+                <a href="https://www.google.com">Manage Your Google Account</a>
+                <a href="https://www.google.com">Logout</a>
               </div>
             ) : (
               ""

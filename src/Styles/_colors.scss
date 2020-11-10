@@ -1,0 +1,21 @@
+$colors: (
+  black: #000,
+  white: #fff,
+  pink: #fa6acc,
+  glamour: #f02a52,
+  sky: #18a0fb,
+  violet: #8a2be2,
+  blue: blue,
+  grey: grey,
+  box-shadow-color: #bbbaac,
+  fields-color: #ced1dd,
+);
+
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors.";
+  @return black;
+}

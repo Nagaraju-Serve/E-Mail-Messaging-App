@@ -1,0 +1,13 @@
+$disp: (
+  grid: grid,
+  flex: flex,
+  block: block,
+);
+
+@function display($key) {
+  @if map-has-key($disp, $key) {
+    @return map-get($disp, $key);
+  }
+  @warn "Unknown `#{$key}` in $disp.";
+  @return null;
+}

@@ -1,18 +1,22 @@
+@import "../../../Styles/Sizes";
+@import "../../../Styles/Literals";
+@import "../../../Styles/grid";
+
 .SentItemsComponent {
   width: 100%;
-  border: 2px solid white;
+  border: size(extrasmall) solid white;
   background: #ffffff;
-  box-shadow: 0 0 4px 4px skyblue;
-  border-radius: 12px;
+  box-shadow: size(verysmall) size(verysmall) size(small) size(small) skyblue;
+  border-radius: size(extramedium);
 }
 
 .grid-container {
-  display: grid;
+  @include grid-display(grid);
   grid-template-columns: 5% 70% auto auto auto auto;
-  grid-gap: 0px;
-  padding: 4px;
-  box-shadow: 0 2px grey;
-  margin: 12px auto;
+  grid-gap: size(verysmall);
+  padding: size(small);
+  box-shadow: size(verysmall) size(extrasmall) grey;
+  margin: size(extramedium) auto;
 }
 
 .check {
@@ -27,12 +31,12 @@
 }
 
 .circleData {
-  text-align: center;
+  text-align: Key(text-align);
   font-weight: 600;
   color: black;
-  text-shadow: 1px 1px 2px white;
-  margin: 20px 12px 24px 12px;
-  display: grid;
+  text-shadow: 1px 1px size(extrasmall) white;
+  margin: size(extralarge) size(extramedium) size(verylarge) size(extramedium);
+  @include grid-display(grid);
   cursor: pointer;
 }
 
@@ -43,7 +47,7 @@
 .subject {
   grid-area: 2/2/2/2;
   bottom: 32px;
-  position: relative;
+  position: Key(position);
 }
 
 .attachments {

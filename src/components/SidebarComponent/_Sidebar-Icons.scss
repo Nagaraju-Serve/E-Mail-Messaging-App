@@ -1,0 +1,12 @@
+@import "../../Styles/Literals";
+@import "../../Styles/Sizes";
+
+$font-size: 400px;
+
+.Sidebar-Icons {
+  right: size(verylarge) + size(medium);
+  top: size(small) + size(extrasmall);
+  position: Key(position);
+  color: white;
+  font-size: $font-size;
+}

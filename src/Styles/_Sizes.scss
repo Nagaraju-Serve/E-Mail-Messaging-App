@@ -1,0 +1,19 @@
+$sizes: (
+  verysmall: 0,
+  extrasmall: 2px,
+  small: 4px,
+  medium: 8px,
+  extramedium: 12px,
+  large: 16px,
+  extralarge: 20px,
+  verylarge: 24px,
+  big: 48px,
+);
+
+@function size($key) {
+  @if map-has-key($sizes, $key) {
+    @return map-get($sizes, $key);
+  }
+  @warn "Unknown `#{$key}` in $sizes.";
+  @return null;
+}

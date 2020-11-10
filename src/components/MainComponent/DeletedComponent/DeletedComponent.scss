@@ -1,25 +1,26 @@
-.DeletedComponent {
-}
+@import "../../../Styles/Sizes";
+@import "../../../Styles/Literals";
+@import "../../../Styles/grid";
 
-.reactsvg {
+@import "src/Styles/colors";
+@import "src/Styles/Sizes";
+@mixin box {
   height: 100px;
   width: 100px;
   border: 1px solid black;
-}
-.reactsvg:hover {
-  background-color: blueviolet;
-  fill: red;
-  color: aquamarine;
+
+  .reactsvg:hover {
+    background-color: blueviolet;
+    fill: red;
+    color: aquamarine;
+  }
 }
 
 .svg {
   width: 70px;
   height: 70px;
-}
-.svg:hover {
-  fill: red;
-}
 
-svg {
-  border: 1px solid #aaa;
+  :hover {
+    fill: red;
+  }
 }

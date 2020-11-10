@@ -1,17 +1,21 @@
+@import "../../../Styles/Sizes";
+@import "../../../Styles/Literals";
+@import "../../../Styles/grid";
+
 .card {
   width: 100%;
-  border: 2px solid white;
+  border: size(extrasmall) solid white;
   background: #ffffff;
-  box-shadow: 0 0 4px 4px skyblue;
-  border-radius: 12px;
+  box-shadow: size(verysmall) size(verysmall) size(small) size(small) skyblue;
+  border-radius: size(extramedium);
 }
 
 .data {
-  margin: 0;
+  margin: size(verysmall);
 }
 
 .Header {
-  list-style-type: none;
+  position: Key(relative);
 }
 
 .circle {
@@ -19,101 +23,101 @@
   height: 60px;
   background-color: #447fa9;
   border-radius: 50%;
-  position: relative;
-  top: 20px;
+  position: Key(position);
+  top: size(extralarge);
 }
 
 .circleData {
-  text-align: center;
+  text-align: Key(text-align);
   font-weight: 600;
   color: black;
-  text-shadow: 1px 1px 2px white;
-  margin: 24px 12px 24px 12px;
-  display: grid;
-  padding: 20px 0 20px 0;
+  text-shadow: 1px 1px size(extrasmall) white;
+  margin: size(verylarge) size(extramedium) size(verylarge) size(extramedium);
+  @include grid-display(grid);
+  padding: size(extralarge) size(verysmall) size(extralarge) size(verysmall);
   cursor: pointer;
 }
 
 .Subject {
-  position: relative;
+  position: Key(position);
   bottom: 100px;
-  margin: 24px auto;
-  text-align: center;
+  margin: size(verylarge) auto;
+  text-align: Key(text-align);
 }
 
 .Name {
-  position: relative;
+  position: Key(position);
   bottom: 104px;
-  margin: 24px auto;
+  margin: size(verylarge) auto;
   left: 64px;
   cursor: pointer;
 }
 
 .Date {
-  position: relative;
+  position: Key(position);
   bottom: 124px;
-  margin: 24px auto;
+  margin: size(verylarge) auto;
   left: 64px;
 }
 
 .Time {
-  position: relative;
+  position: Key(position);
   bottom: 164px;
-  margin: 24px auto;
+  margin: size(verylarge) auto;
   left: 168px;
 }
 
 .Recipient {
-  position: relative;
+  position: Key(position);
   bottom: 184px;
-  margin: 24px auto;
+  margin: size(verylarge) auto;
   left: 64px;
   cursor: pointer;
 }
 
 .CC {
-  position: relative;
+  position: Key(position);
   bottom: 204px;
-  margin: 24px auto;
+  margin: size(verylarge) auto;
   left: 64px;
 }
 
 .Text {
-  position: relative;
+  position: Key(position);
   bottom: 172px;
-  margin: 24px auto;
+  margin: size(verylarge) auto;
   left: 64px;
   cursor: pointer;
 }
 
 .Data {
   bottom: 140px;
-  position: relative;
+  position: Key(position);
   left: 170px;
 }
 
 .Data::after {
   left: 120px;
-  position: relative;
+  position: Key(position);
 }
 
 .footer {
-  display: grid;
-  margin: 0 auto;
+  @include grid-display(grid);
+  margin: size(verysmall) auto;
   left: 34px;
-  position: relative;
+  position: Key(position);
   bottom: 60px;
 }
 
 .Salutation,
 .SalutationName {
   float: left;
-  position: relative;
+  position: Key(position);
 }
 
 .btn {
-  left: 20px;
-  position: relative;
+  left: size(extralarge);
+  position: Key(position);
 }
 
 .Reply,
@@ -123,9 +127,9 @@
   height: 32px;
   color: white;
   background: #0078d4;
-  margin: 12px;
-  border-radius: 4px;
+  margin: size(extramedium);
+  border-radius: size(small);
   border: none;
-  padding: 10px 12px 12px 12px;
+  padding: 10px size(extramedium) size(extramedium) size(extramedium);
   cursor: pointer;
 }

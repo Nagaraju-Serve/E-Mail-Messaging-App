@@ -1,6 +1,7 @@
 import React from "react";
 import SVGComponent from "../../SVGComponent/SVGComponent";
 import "./DeletedComponent.scss";
+import TestFunctionalComponent from "./TestFunctionalComponent/TestFunctionalComponent";
 
 export default class DeletedComponent extends React.Component {
   onClick = () => {
@@ -11,11 +12,25 @@ export default class DeletedComponent extends React.Component {
     console.log(this.refs.Hamburger);
   };
 
+  list = [
+    { title: "A Christmas Carol", author: "Charles Dickens" },
+    { title: "The Mansion", author: "Henry Van Dyke" },
+  ];
+
   render() {
     return (
       <div className="DeletedComponent">
         {/* <TestFunctionalComponent /> */}
         DeletedComponent Component is here....
+        <ul>
+          {this.list.map((book: any, i: any) => (
+            <TestFunctionalComponent
+              title={book.title}
+              author={book.author}
+              key={i}
+            />
+          ))}
+        </ul>
         <div className="logo">
           {/* <ReactLogo className="reactsvg" /> */}
           <SVGComponent name="Apps" fill="red"></SVGComponent>

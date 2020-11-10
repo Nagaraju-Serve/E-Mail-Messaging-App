@@ -1,85 +1,117 @@
-import React from 'react';
-import './SignupComponent.scss';
+import React from "react";
+import "./SignupComponent.scss";
 
-export interface ISignUpComponentProps {
-
-}
+export interface ISignUpComponentProps {}
 
 export interface ISignUpComponentState {
-  NameValue: string;
-  PasswordValue: string;
-  ConfirmPasswordValue: string;
-  EmailValue: string;
-  Showform: boolean;
-  ShowMessage: boolean
+  nameValue: string;
+  passwordValue: string;
+  confirmPasswordValue: string;
+  emailValue: string;
+  showForm: boolean;
+  showMessage: boolean;
 }
 
-export default class SignupComponent extends React.Component<ISignUpComponentProps, ISignUpComponentState> {
-
+export default class SignupComponent extends React.Component<
+  ISignUpComponentProps,
+  ISignUpComponentState
+> {
   constructor(props: ISignUpComponentProps) {
-    super(props)
+    super(props);
     this.state = {
-      NameValue: "Enter Name",
-      PasswordValue: "Enter Password",
-      ConfirmPasswordValue: "Confirm Password",
-      EmailValue: "abc@example.com",
-      Showform: true,
-      ShowMessage: true
-    }
+      nameValue: "Enter Name",
+      passwordValue: "Enter Password",
+      confirmPasswordValue: "Confirm Password",
+      emailValue: "abc@example.com",
+      showForm: true,
+      showMessage: true,
+    };
   }
 
-  NameHandler = (e: any) => {
+  nameHandler = (e: any) => {
     this.setState({
-      NameValue: e.target.value
+      nameValue: e.target.value,
     });
-  }
+  };
 
-  PasswordHandler = (e: any) => {
+  passwordHandler = (e: any) => {
     this.setState({
-      PasswordValue: e.target.value
+      passwordValue: e.target.value,
     });
-  }
+  };
 
-  EmailHandler = (e: any) => {
+  emailHandler = (e: any) => {
     this.setState({
-      EmailValue: e.target.value
+      emailValue: e.target.value,
     });
-  }
+  };
 
-  ConfirmPasswordHandler = (e: any) => {
+  confirmPasswordHandler = (e: any) => {
     this.setState({
-      ConfirmPasswordValue: e.target.value
+      confirmPasswordValue: e.target.value,
     });
-  }
+  };
 
-  SignUpHandler = () => {
+  signUpHandler = () => {
     this.setState({
-      NameValue: "Enter Name",
-      PasswordValue: "Enter Password",
-      Showform: false,
-      ShowMessage: false
+      nameValue: "Enter Name",
+      passwordValue: "Enter Password",
+      showForm: false,
+      showMessage: false,
     });
-  }
+  };
 
   render() {
-    const SignUpMessage = <span className="Span">Your SignUp was Successfully</span>
+    const signUpMessage = (
+      <span className="signup-span">Your SignUp was Successfully</span>
+    );
 
     return (
-      <div className="SignupComponent" data-testid="SignupComponent">
-        <div className="container">
-          <form className="form" onSubmit={this.SignUpHandler}>
-            <input type="text" id="name" onChange={this.NameHandler} placeholder={this.state.NameValue} required />
-            <input type="email" id="email" onChange={this.EmailHandler} placeholder={this.state.EmailValue} required />
-            <input type="password" id="password" onChange={this.PasswordHandler} placeholder={this.state.PasswordValue} required />
-            <input type="password" id="confirmPassword" onChange={this.ConfirmPasswordHandler} placeholder={this.state.ConfirmPasswordValue} required />
-            <button type="submit" id="SignUp">SignUp</button>
+      <div className="signup-component" data-testid="SignupComponent">
+        <div className="signup-container">
+          <form className="signup-form" onSubmit={this.signUpHandler}>
+            <input
+              type="text"
+              id="name"
+              className="signup-input-fields"
+              onChange={this.nameHandler}
+              placeholder={this.state.nameValue}
+              required
+            />
+            <input
+              type="email"
+              id="email"
+              className="signup-input-fields"
+              onChange={this.emailHandler}
+              placeholder={this.state.emailValue}
+              required
+            />
+            <input
+              type="password"
+              className="signup-input-fields"
+              id="password"
+              onChange={this.passwordHandler}
+              placeholder={this.state.passwordValue}
+              required
+            />
+            <input
+              type="password"
+              className="signup-input-fields"
+              id="confirmPassword"
+              onChange={this.confirmPasswordHandler}
+              placeholder={this.state.confirmPasswordValue}
+              required
+            />
+            <button type="submit" className="signup-button">
+              SignUp
+            </button>
           </form>
-          <a className="ancestor" href="http://localhost:3001">Already Have an account ?</a>
-          {
-            this.state.ShowMessage === false ? SignUpMessage : ''
-          }
+          <a className="signup-ancestor" href="http://localhost:3000">
+            Already Have an account ?
+          </a>
+          {this.state.showMessage === false ? signUpMessage : ""}
         </div>
       </div>
-    )
+    );
   }
 }

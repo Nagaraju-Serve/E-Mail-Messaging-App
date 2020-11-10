@@ -27,43 +27,43 @@ export default class SidebarComponent extends React.Component<
 
   render() {
     return (
-      <div className="main">
+      <div className="sidebar-main">
         <HeaderComponent />
         <BrowserRouter>
-          <ul className="listItems">
-            <li className="li">
-              <MenuRoundedIcon className="MenuRoundedIcon Sidebar-Icons"></MenuRoundedIcon>
-              <Link to="/Compose" className="listItem">
+          <ul className="sidebar-listItems">
+            <li className="sidebar-listItems-li">
+              <MenuRoundedIcon className="MenuRoundedIcon sidebar-icons"></MenuRoundedIcon>
+              <Link to="/Compose" className="sidebar-listItem">
                 Compose
               </Link>
             </li>
-            <li className="li">
-              <InboxRoundedIcon className="InboxRoundedIcon Sidebar-Icons"></InboxRoundedIcon>
-              <Link to="/Inbox" className="listItem">
+            <li className="sidebar-listItems-li">
+              <InboxRoundedIcon className="InboxRoundedIcon sidebar-icons"></InboxRoundedIcon>
+              <Link to="/Inbox" className="sidebar-listItem">
                 Inbox
               </Link>
             </li>
-            <li className="li">
-              <SendRoundedIcon className="SendRoundedIcon Sidebar-Icons"></SendRoundedIcon>
-              <Link to="/Sent" className="listItem">
+            <li className="sidebar-listItems-li">
+              <SendRoundedIcon className="SendRoundedIcon sidebar-icons"></SendRoundedIcon>
+              <Link to="/Sent" className="sidebar-listItem">
                 Sent
               </Link>
             </li>
-            <li className="li">
-              <DraftsIcon className="DraftsIcon Sidebar-Icons"></DraftsIcon>
-              <Link to="/Drafts" className="listItem">
+            <li className="sidebar-listItems-li">
+              <DraftsIcon className="DraftsIcon sidebar-icons"></DraftsIcon>
+              <Link to="/Drafts" className="sidebar-listItem">
                 Drafts
               </Link>
             </li>
-            <li className="li">
-              <DeleteOutlineIcon className="DeleteOutlineIcon Sidebar-Icons"></DeleteOutlineIcon>
-              <Link to="/Deleted" className="listItem">
+            <li className="sidebar-listItems-li">
+              <DeleteOutlineIcon className="DeleteOutlineIcon sidebar-icons"></DeleteOutlineIcon>
+              <Link to="/Deleted" className="sidebar-listItem">
                 Deleted
               </Link>
             </li>
           </ul>
           <Switch>
-            <div className="Component">
+            <div className="sidebar-component">
               <Route exact path="/Inbox" component={InboxComponent}></Route>
               <Route exact path="/Compose" component={ComposeComponent}></Route>
               <Route exact path="/Sent" component={SentComponent}></Route>

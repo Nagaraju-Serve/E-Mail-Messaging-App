@@ -79,7 +79,7 @@ export default class LoginComponent extends React.Component<
               <input
                 type="email"
                 id="name"
-                className="login-name"
+                className="login-input-fields"
                 autoComplete="off"
                 onChange={this.nameHandler}
                 placeholder={this.state.nameValue}
@@ -87,7 +87,7 @@ export default class LoginComponent extends React.Component<
               <input
                 type="password"
                 id="password"
-                className="login-password"
+                className="login-input-fields"
                 onChange={this.passwordHandler}
                 placeholder={this.state.passwordValue}
               />

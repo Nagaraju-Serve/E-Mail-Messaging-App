@@ -29,13 +29,13 @@ export default class ComposeComponent extends React.Component {
     LastName: "Odipelly",
   };
 
-  InputChangeHandler = (event: any) => {
+  inputChangeHandler = (event: any) => {
     this.setState({
       [event.target.name]: event.target.value,
     });
   };
 
-  SubmitHandler = (event: any) => {
+  submitHandler = (event: any) => {
     event.preventDefault();
 
     const inbox = {
@@ -62,59 +62,63 @@ export default class ComposeComponent extends React.Component {
     const cols = 65;
 
     return (
-      <div className="ComposeComponent" data-testid="ComposeComponent">
-        <form className="Form" onSubmit={this.SubmitHandler}>
-          <label className="Label">
-            <span className="LabelText">To: </span>
+      <div className="compose-component" data-testid="ComposeComponent">
+        <form className="compose-form" onSubmit={this.submitHandler}>
+          <label className="compose-label">
+            <span className="compose-label-text">To: </span>
             <input
               type="text"
               id="Recipient"
+              className="compose-input-fields"
               name="Recipient"
               value={Recipient}
-              onChange={this.InputChangeHandler}
+              onChange={this.inputChangeHandler}
             />
           </label>
-          <label className="Label">
-            <span className="LabelText">CC: </span>
+          <label className="compose-label">
+            <span className="compose-label-text">CC: </span>
             <input
               type="text"
               id="CC"
+              className="compose-input-fields"
               name="CC"
               value={CC}
-              onChange={this.InputChangeHandler}
+              onChange={this.inputChangeHandler}
             />
           </label>
-          <label className="Label">
-            <span className="LabelText">Subject: </span>
+          <label className="compose-label">
+            <span className="compose-label-text">Subject: </span>
             <input
               type="text"
               id="Subject"
+              className="compose-input-fields"
               name="Subject"
               value={Subject}
-              onChange={this.InputChangeHandler}
+              onChange={this.inputChangeHandler}
             />
           </label>
           <textarea
             rows={rows}
             cols={cols}
             name="Data"
+            className="compose-textarea"
             value={Data}
-            onChange={this.InputChangeHandler}
+            onChange={this.inputChangeHandler}
           ></textarea>
-          <div className="align">
-            <button className="Send">Send</button>
-            <div className="Icons">
+          <div className="compose-leftlist">
+            <button className="compose-button">Send</button>
+            <div className="compose-icons">
               <AttachFileIcon
                 titleAccess="AttachFiles"
-                className="Icons"
+                className="compose-icons"
               ></AttachFileIcon>
               <MoodIcon
                 titleAccess="Add Expressions"
-                className="Icons"
+                className="compose-icons"
               ></MoodIcon>
               <MoreVertIcon
                 titleAccess="MoreOptions"
-                className="Icons"
+                className="compose-icons"
               ></MoreVertIcon>
             </div>
           </div>

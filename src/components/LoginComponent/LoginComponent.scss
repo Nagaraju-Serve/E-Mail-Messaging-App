@@ -27,8 +27,7 @@ h1 {
   @include grid-display(block);
 }
 
-.login-name,
-.login-password {
+.login-input-fields {
   width: $width - 35%;
   outline: Key(outline);
   border: Key(border);

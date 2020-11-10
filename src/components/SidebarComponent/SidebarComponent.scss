@@ -11,23 +11,23 @@ $sidebar-colors: (
   activeShadowBackground: white,
 );
 
-.main {
+.sidebar-main {
   @include grid-display(grid);
   @include grid-templates(12% 50% auto, auto);
   width: 100%;
   //grid-template-columns: 12% 50% auto;
 }
 
-.listItems {
+.sidebar-listItems {
   background: map-get($sidebar-colors, Bg-color);
   height: $height;
-  position: Key(relative);
+  position: Key(position);
   list-style-type: Key(list-style-type);
   margin-top: size(small);
   margin-bottom: size(verysmall);
 }
 
-.li {
+.sidebar-listItems-li {
   padding: size(extralarge) size(extramedium);
   text-shadow: size(verysmall) size(extrasmall) size(extrasmall)
     map-get($sidebar-colors, shadowBackground);
@@ -38,18 +38,18 @@ $sidebar-colors: (
   }
 }
 
-@mixin listitem($color) {
+@mixin sidebar-listitem($color) {
   right: size(extralarge);
   position: Key(position);
   text-decoration: none;
   color: $color;
 }
 
-.listItem {
-  @include listitem(white);
+.sidebar-listItem {
+  @include sidebar-listitem(white);
 }
 
-.Component {
+.sidebar-component {
   grid-area: 2/2/2/3;
   margin-top: size(large);
   margin-left: size(large);

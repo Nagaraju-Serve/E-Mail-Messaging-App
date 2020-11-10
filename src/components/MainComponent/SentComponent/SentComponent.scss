@@ -42,11 +42,14 @@
 
 .sendername {
   grid-area: 1/2/1/2;
+  left: size(big);
+  position: relative;
 }
 
 .subject {
   grid-area: 2/2/2/2;
   bottom: 32px;
+  left: size(big);
   position: Key(position);
 }
 

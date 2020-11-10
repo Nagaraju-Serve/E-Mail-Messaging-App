@@ -24,7 +24,7 @@ export default class InboxComponent extends React.Component<
   }
 
   get = axios
-    .get("http://localhost:3000/inbox")
+    .get("http://localhost:3001/inbox")
     .then((res) => res)
     .then((json) => {
       this.setState({
@@ -35,7 +35,7 @@ export default class InboxComponent extends React.Component<
 
   componentDidMount() {
     axios
-      .get("http://localhost:3000/inbox")
+      .get("http://localhost:3001/inbox")
       .then((res) => res)
       .then((json) => {
         this.setState({
@@ -45,7 +45,7 @@ export default class InboxComponent extends React.Component<
       });
   }
 
-  DeleteHandler = (e: any) => {};
+  deleteHandler = (e: any) => {};
 
   render() {
     const { isLoaded, items } = this.state;
@@ -53,32 +53,40 @@ export default class InboxComponent extends React.Component<
       return <div>not loaded data</div>;
     } else {
       return (
-        <div className="maindiv">
-          <div>
-            <div className="header">
-              checkbox
+        <div className="inbox-main">
+          <div className="inbox-header">
+            <div className="inbox-checkbox">
               <input
                 type="checkbox"
                 id="checked"
                 name="checked"
                 value="check"
-              ></input>
+              />
+              checkbox
             </div>
-            <div className="orderBy">order By:</div>
-            <div className="pagination">pagination</div>
+            <div className="inbox-order">order By:</div>
+            <div className="inbox-pagination">pagination</div>
           </div>
 
           {items.map((p: any) => {
             return (
-              <div className="rows">
-                <div className="grid-container">
-                  <div className="check">check</div>
-                  <div className="senderName">
+              <div className="inbox-rows">
+                <div className="inbox-grid-container">
+                  <div className="inbox-check">
+                    <input
+                      type="checkbox"
+                      id="checked"
+                      name="checked"
+                      value="check"
+                    />
+                    check
+                  </div>
+                  <div className="inbox-sendername">
                     <b>{p.sendername}</b>
                   </div>
-                  <div className="subject">{p.subject}</div>
-                  {/* <div className="attachments"> {p.attachments}</div> */}
-                  <div className="flag">
+                  <div className="inbox-subject">{p.subject}</div>
+                  {/* <div className="inbox-attachments"> {p.attachments}</div> */}
+                  <div className="inbox-flag">
                     <FlagIcon
                       color="primary"
                       onClick={() => {
@@ -86,13 +94,13 @@ export default class InboxComponent extends React.Component<
                       }}
                     />
                   </div>
-                  <div className="deleted">
+                  <div className="inbox-deleted">
                     <DeleteOutlined
-                      onClick={this.DeleteHandler}
+                      onClick={this.deleteHandler}
                     ></DeleteOutlined>
                   </div>
-                  <div className="time">{p.time}</div>
-                  <div className="date">{p.date}</div>
+                  <div className="inbox-time">{p.time}</div>
+                  <div className="inbox-date">{p.date}</div>
                 </div>
               </div>
             );

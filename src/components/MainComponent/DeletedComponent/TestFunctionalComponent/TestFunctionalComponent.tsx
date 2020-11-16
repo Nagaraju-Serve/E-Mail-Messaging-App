@@ -1,20 +1,42 @@
-// import React from "react";
-// const TestFunctionalComponent = () => {
-//   return (
-//     <div className="App">
-//       <p>1</p>
-//       <h1>21</h1>
-//     </div>
-//   );
-// };
-// export default TestFunctionalComponent;
+import React, { useState } from "react";
 
-import React from "react";
-function TestFunctionalComponent() {
+export interface ITestFunctionalComponentProps {
+  name: string;
+  text: string;
+}
+function TestFunctionalComponent(props: ITestFunctionalComponentProps) {
+  const [usersList, setUsersList] = useState({});
+  const [usersCount, setUsersCount] = useState(0);
+
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    const data: any = new FormData(event.target);
+    const email: any = data.get("email");
+    const password = data.get("password");
+
+    let newState = { [email]: password };
+    setUsersList(newState);
+    setUsersCount(Object.keys(newState).length);
+  };
+
   return (
     <div className="App">
-      <p>1</p>
-      <h1>2</h1>
+      <div>
+        UsersList:{JSON.stringify(usersList)}
+        <br />
+        UsersCount: {usersCount}
+      </div>
+      <form onSubmit={handleSubmit} autoComplete="off">
+        <label>Email</label>
+        <input type="text" name="email" id="email" />
+        <br />
+        <br />
+        <label>Password</label>
+        <input type="text" name="password" id="password" />
+        <button type="submit">Submit</button>
+      </form>
+      {props.name}
+      {props.text}
     </div>
   );
 }

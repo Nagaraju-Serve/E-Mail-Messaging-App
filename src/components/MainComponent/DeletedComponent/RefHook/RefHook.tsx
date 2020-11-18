@@ -1,13 +1,16 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 
 function RefHook() {
-  const inputRef = useRef(null);
+  const inputRef: any = useRef(null);
+
+  const onFocus = () => {
+    inputRef.current.focus();
+  };
+
   return (
     <div>
       <input ref={inputRef} type="text" />
-      <button onClick={() => inputRef.current && inputRef.current}>
-        Focus the text input
-      </button>
+      <button onClick={onFocus}>Focus the text input</button>
     </div>
   );
 }

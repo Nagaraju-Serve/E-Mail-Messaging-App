@@ -19,7 +19,7 @@ function numberReducer(state: any, action: any) {
 function MultipleReducers() {
   const buttonStyle = { margin: "5px" };
   const [count, dispatch] = useReducer(numberReducer, initialCount);
-  const [countTwo, dispatchTwo] = useReducer(numberReducer, initialCount);
+  // const [countTwo, dispatchTwo] = useReducer(numberReducer, initialCount);
 
   return (
     <div className="ReducerHook" data-testid="ReducerHook">

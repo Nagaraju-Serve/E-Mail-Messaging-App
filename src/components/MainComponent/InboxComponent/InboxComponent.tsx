@@ -35,7 +35,7 @@ export default class InboxComponent extends React.Component<
 
   componentDidMount() {
     axios
-      .get("http://localhost:3001/inbox")
+      .get("http://localhost:3000/inbox")
       .then((res) => res)
       .then((json) => {
         this.setState({

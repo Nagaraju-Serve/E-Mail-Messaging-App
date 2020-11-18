@@ -1,3 +1,25 @@
+// import React, { useState } from "react";
+// import Child from "./Child/Child";
+
+// function Parent(props: any) {
+//   const initialState: any = null;
+//   const [state, setstate] = useState(initialState);
+
+//   const handleCallback = (childData: any) => {
+//     setstate({ ...state, state: childData });
+//     console.log("I'm From Parent");
+//   };
+
+//   return (
+//     <div>
+//       <Child parentCallback={handleCallback} />
+//       {state}
+//     </div>
+//   );
+// }
+
+// export default Parent;
+
 import React from "react";
 import Child from "./Child/Child";
 
@@ -11,6 +33,7 @@ class Parent extends React.Component<{}, { data: any }> {
 
   handleCallback = (childData: any) => {
     this.setState({ data: childData });
+    console.log("I'm From Parent");
   };
 
   render() {

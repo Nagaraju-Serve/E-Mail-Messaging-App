@@ -54,15 +54,15 @@ export default class DeletedComponent extends React.Component {
         <hr />
         <ReducerHook />
         <hr />
-        <TestFunctionalComponent name="Nagaraju" text="Hello World!" />
+        <TestFunctionalComponent />
         <hr />
         <ComputerComponent />
         <hr />
         {/* <ul>
           {this.list.map((book: any, i: any) => (
             <TestFunctionalComponent
-              title={book.title}
-              author={book.author}
+              title={TestFunctionalComponent.title}
+              author={TestFunctionalComponent.author}
               key={i}
             />
           ))}

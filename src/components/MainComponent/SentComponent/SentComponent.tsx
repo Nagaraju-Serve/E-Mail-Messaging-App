@@ -37,26 +37,26 @@ export default class SentItemsComponent extends React.Component<
     const { response } = this.state;
 
     return (
-      <div className="SentItemsComponent" data-testid="SentItemsComponent">
+      <div className="Sent-ItemsComponent" data-testid="SentItemsComponent">
         {response.map((data: any, index: number) => {
           return (
-            <div className="grid-container" key={index}>
-              <div className="circle">
-                <span className="circleData">
+            <div className="sent-gridcontainer" key={index}>
+              <div className="sent-circle">
+                <span className="sent-circleData">
                   {[
                     data.FirstName[0] + data.LastName[0],
                     console.log("......", data.FirstName[0], data.LastName[0]),
                   ]}
                 </span>
               </div>
-              <div className="sendername">
+              <div className="sent-sendername">
                 <b>{data.Recipient}</b>
               </div>
-              <div className="subject">{data.Subject}</div>
-              <div className="attachments">{data.attachments}</div>
-              <div className="flag">{data.flag}</div>
-              <div className="time">{data.Time}</div>
-              <div className="date">{data.Date}</div>
+              <div className="sent-subject">{data.Subject}</div>
+              <div className="sent-attachments">{data.attachments}</div>
+              <div className="sent-flag">{data.flag}</div>
+              <div className="sent-time">{data.Time}</div>
+              <div className="sent-date">{data.Date}</div>
             </div>
           );
         })}

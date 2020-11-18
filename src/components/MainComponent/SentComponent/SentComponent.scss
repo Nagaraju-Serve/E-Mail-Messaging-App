@@ -1,72 +1,82 @@
 @import "../../../Styles/Sizes";
 @import "../../../Styles/Literals";
 @import "../../../Styles/grid";
+@import "../../../Styles/colors";
 
-.SentItemsComponent {
+.Sent-ItemsComponent {
   width: 100%;
-  border: size(extrasmall) solid white;
-  background: #ffffff;
-  box-shadow: size(verysmall) size(verysmall) size(small) size(small) skyblue;
+  border: size(extrasmall) solid color(white);
+  background: color(white);
+  box-shadow: size(verysmall) size(verysmall) size(small) size(small)
+    color(skyblue);
   border-radius: size(extramedium);
 }
 
-.grid-container {
+.sent-gridcontainer {
   @include grid-display(grid);
   grid-template-columns: 5% 70% auto auto auto auto;
   grid-gap: size(verysmall);
   padding: size(small);
-  box-shadow: size(verysmall) size(extrasmall) grey;
+  box-shadow: size(verysmall) size(extrasmall) color(grey);
   margin: size(extramedium) auto;
 }
 
 .check {
-  grid-area: 1/1/3/1;
+  // grid-area: 1/1/3/1;
+  @include grid-area(1, 1, 3, 1);
 }
 
-.circle {
-  width: 60px;
-  height: 60px;
-  background-color: #447fa9;
+.sent-circle {
+  width: size(big);
+  height: size(big);
+  // height: 60px;
+  background-color: color(violet);
   border-radius: 50%;
 }
 
-.circleData {
+.sent-circleData {
   text-align: Key(text-align);
   font-weight: 600;
-  color: black;
-  text-shadow: 1px 1px size(extrasmall) white;
+  color: color(black);
+  text-shadow: 1px 1px size(extrasmall) color(white);
   margin: size(extralarge) size(extramedium) size(verylarge) size(extramedium);
   @include grid-display(grid);
   cursor: pointer;
 }
 
-.sendername {
-  grid-area: 1/2/1/2;
+.sent-sendername {
+  // grid-area: 1/2/1/2;
+  @include grid-area(1, 2, 1, 2);
   left: size(big);
   position: relative;
 }
 
-.subject {
-  grid-area: 2/2/2/2;
+.sent-subject {
+  // grid-area: 2/2/2/2;
+  @include grid-area(2, 2, 2, 2);
   bottom: 32px;
   left: size(big);
   position: Key(position);
 }
 
-.attachments {
-  grid-area: 2/3/2/3;
+.sent-attachments {
+  // grid-area: 2/3/2/3;
+  @include grid-area(2, 3, 2, 3);
 }
 
-.flag {
-  grid-area: 2/4/2/4;
+.sent-flag {
+  // grid-area: 2/4/2/4;
+  @include grid-area(2, 4, 2, 4);
 }
 
-.time {
-  grid-area: 2/5/2/5;
-  color: gray;
+.sent-time {
+  // grid-area: 2/5/2/5;
+  @include grid-area(2, 5, 2, 5);
+  color: color(grey);
 }
 
-.date {
-  grid-area: 2/6/2/6;
-  color: gray;
+.sent-date {
+  // grid-area: 2/6/2/6;
+  @include grid-area(2, 6, 2, 6);
+  color: color(grey);
 }

@@ -2,50 +2,52 @@
 @import "../../../Styles/Literals";
 @import "../../../Styles/grid";
 
-.card {
+.detailedinbox-card {
   width: 100%;
-  border: size(extrasmall) solid white;
-  background: #ffffff;
-  box-shadow: size(verysmall) size(verysmall) size(small) size(small) skyblue;
+  border: size(extrasmall) solid color(white);
+  background: color(white);
+  box-shadow: size(verysmall) size(verysmall) size(small) size(small)
+    color(skyblue);
   border-radius: size(extramedium);
 }
 
-.data {
+.detailedinbox-data {
   margin: size(verysmall);
 }
 
-.Header {
+.detailedinbox-Header {
   position: Key(relative);
 }
 
-.circle {
-  width: 60px;
-  height: 60px;
+.detailedinbox-circle {
+  width: size(big);
+  // height: 60px;
+  height: size(big);
   background-color: #447fa9;
   border-radius: 50%;
   position: Key(position);
   top: size(extralarge);
 }
 
-.circleData {
+.detailedinbox-circleData {
   text-align: Key(text-align);
   font-weight: 600;
-  color: black;
-  text-shadow: 1px 1px size(extrasmall) white;
+  color: color(black);
+  text-shadow: 1px 1px size(extrasmall) color(white);
   margin: size(verylarge) size(extramedium) size(verylarge) size(extramedium);
   @include grid-display(grid);
   padding: size(extralarge) size(verysmall) size(extralarge) size(verysmall);
   cursor: pointer;
 }
 
-.Subject {
+.detailedinbox-Subject {
   position: Key(position);
   bottom: 100px;
   margin: size(verylarge) auto;
   text-align: Key(text-align);
 }
 
-.Name {
+.detailedinbox-Name {
   position: Key(position);
   bottom: 104px;
   margin: size(verylarge) auto;
@@ -53,21 +55,21 @@
   cursor: pointer;
 }
 
-.Date {
+.detailedinbox-Date {
   position: Key(position);
   bottom: 124px;
   margin: size(verylarge) auto;
   left: 64px;
 }
 
-.Time {
+.detailedinbox-Time {
   position: Key(position);
   bottom: 164px;
   margin: size(verylarge) auto;
   left: 168px;
 }
 
-.Recipient {
+.detailedinbox-Recipient {
   position: Key(position);
   bottom: 184px;
   margin: size(verylarge) auto;
@@ -75,14 +77,14 @@
   cursor: pointer;
 }
 
-.CC {
+.detailedinbox-CC {
   position: Key(position);
   bottom: 204px;
   margin: size(verylarge) auto;
   left: 64px;
 }
 
-.Text {
+.detailedinbox-Text {
   position: Key(position);
   bottom: 172px;
   margin: size(verylarge) auto;
@@ -90,18 +92,18 @@
   cursor: pointer;
 }
 
-.Data {
+.detailedinbox-Data {
   bottom: 140px;
   position: Key(position);
   left: 170px;
 }
 
-.Data::after {
+.detailedinbox-Data::after {
   left: 120px;
   position: Key(position);
 }
 
-.footer {
+.detailedinbox-footer {
   @include grid-display(grid);
   margin: size(verysmall) auto;
   left: 34px;
@@ -109,24 +111,24 @@
   bottom: 60px;
 }
 
-.Salutation,
-.SalutationName {
+.detailedinbox-Salutation,
+.detailedinbox-SalutationName {
   float: left;
   position: Key(position);
 }
 
-.btn {
+.detailedinbox-btn {
   left: size(extralarge);
   position: Key(position);
 }
 
-.Reply,
-.ReplyAll,
-.Forward {
+.detailedinbox-Reply,
+.detailedinbox-ReplyAll,
+.detailedinbox-Forward {
   width: fit-content;
   height: 32px;
-  color: white;
-  background: #0078d4;
+  color: color(white);
+  background: color(sky);
   margin: size(extramedium);
   border-radius: size(small);
   border: none;

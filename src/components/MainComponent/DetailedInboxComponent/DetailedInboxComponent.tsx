@@ -90,59 +90,70 @@ export default class DetailedInboxComponent extends React.Component<
       <div className="InboxComponent" data-testid="InboxComponent">
         {response.map((data: any, index: number) => {
           return (
-            <div className="card" key={index + 1}>
-              <div className="data">
-                <ul className="Header">
+            <div className="detailedinbox-card" key={index + 1}>
+              <div className="detailedinbox-data">
+                <ul className="detailedinbox-Header">
                   <li>
-                    <div className="circle">
-                      <span className="circleData">
+                    <div className="detailedinbox-circle">
+                      <span className="detailedinbox-circleData">
                         {[
                           data.FirstName[0] + data.LastName[0],
                           console.log(data.FirstName[0], data.LastName[0]),
                         ]}
                       </span>
                     </div>
-                    <h4 className="Subject">{data.Subject}</h4>
-                    <h5 className="Name">
+                    <h4 className="detailedinbox-Subject">{data.Subject}</h4>
+                    <h5 className="detailedinbox-Name">
                       {data.FirstName + " " + data.LastName}
                     </h5>
-                    <h5 className="Date">{data.Date}</h5>
-                    <h5 className="Time">{data.Time}</h5>
-                    <h5 className="Recipient" onClick={this.CCHandler}>
+                    <h5 className="detailedinbox-Date">{data.Date}</h5>
+                    <h5 className="detailedinbox-Time">{data.Time}</h5>
+                    <h5
+                      className="detailedinbox-Recipient"
+                      onClick={this.CCHandler}
+                    >
                       To: {data.Recipient}
                     </h5>
-                    <h6 className="CC">
+                    <h6 className="detailedinbox-CC">
                       {data.CC === "" ? " " : `${"CC:"}` + data.CC}
                     </h6>
                   </li>
                 </ul>
-                <h6 className="Text">
+                <h6 className="detailedinbox-Text">
                   <span>Hi {data.Recipient} ,</span>
                 </h6>
-                <span className="Data">
+                <span className="detailedinbox-Data">
                   {data.Data.map((el: any, index: number) => {
                     return (
                       <div key={index}>
-                        <span className="initial">{el}</span>
+                        <span className="detailedinbox-initial">{el}</span>
                         <br />
                       </div>
                     );
                   })}
                 </span>
-                <div className="footer">
-                  <span className="Salutation">Thanks & Regards,</span>
-                  <span className="SalutationName">
+                <div className="detailedinbox-footer">
+                  <span className="detailedinbox-Salutation">
+                    Thanks & Regards,
+                  </span>
+                  <span className="detailedinbox-SalutationName">
                     {data.FirstName + " " + data.LastName}
                   </span>
                 </div>
-                <div className="btn">
-                  <button className="Reply" onClick={this.BtnHandler}>
+                <div className="detailedinbox-btn">
+                  <button
+                    className="detailedinbox-Reply"
+                    onClick={this.BtnHandler}
+                  >
                     Reply
                   </button>
-                  <button className="ReplyAll" onClick={this.DeleteHandler}>
+                  <button
+                    className="detailedinbox-ReplyAll"
+                    onClick={this.DeleteHandler}
+                  >
                     Reply All
                   </button>
-                  <button className="Forward">Forward</button>
+                  <button className="detailedinbox-Forward">Forward</button>
                 </div>
               </div>
             </div>

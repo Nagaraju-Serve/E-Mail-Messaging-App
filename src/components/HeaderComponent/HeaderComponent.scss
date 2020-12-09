@@ -87,3 +87,28 @@ input[type="search"] {
   @include grid-area(1, 1, 1, 1);
   cursor: Key(cursor);
 }
+
+.header-settingDropdown {
+  color: red;
+  background-color: grey;
+  height: 100px;
+  width: 70px;
+}
+
+.header-profileDropdown {
+  // font-size: 30px;
+  // background-color: grey;
+  // height: 180px;
+  // width: 70px;
+}
+
+.dropdown {
+  width: 100px;
+}
+.dropdown .item {
+  display: none;
+}
+
+.dropdown:hover .item {
+  display: block;
+}

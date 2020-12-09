@@ -5,8 +5,6 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
-    "@testing-library/jest-dom": "^5.11.5",
-    "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.19.3",
@@ -46,6 +44,10 @@
     ]
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.1.6"
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.1.2",
+    "@types/react-router-dom": "^5.1.6",
+    "jest-dom": "^4.0.0",
+    "react-test-render": "^1.1.2"
   }
 }

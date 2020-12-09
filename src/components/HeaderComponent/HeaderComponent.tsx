@@ -15,6 +15,7 @@ export interface IHeaderComponentProps {}
 export interface IHeaderComponentState {
   userOptions: boolean;
   userSettings: boolean;
+  testsetting: boolean;
 }
 
 export default class HeaderComponent extends React.Component<
@@ -26,6 +27,7 @@ export default class HeaderComponent extends React.Component<
     this.state = {
       userOptions: false,
       userSettings: false,
+      testsetting: false,
     };
   }
 
@@ -43,10 +45,17 @@ export default class HeaderComponent extends React.Component<
     });
   };
 
+  testHandler = (e: any) => {
+    e.preventDefault();
+    this.setState({
+      testsetting: true,
+    });
+  };
+
   render() {
     return (
       <div className="header-component" data-testid="HeaderComponent">
-        <ul className="header">
+        <ul className="header" data-testid="header">
           <li className="header-name header-rightlist">
             <AppsOutlined className="header-app-icon" /> Outlook
           </li>
@@ -58,6 +67,7 @@ export default class HeaderComponent extends React.Component<
             <li className="header-rightlist">
               <CalendarToday />
             </li>
+
             <li className="header-rightlist">
               <NotificationsNoneRounded />
             </li>
@@ -67,7 +77,7 @@ export default class HeaderComponent extends React.Component<
             <li className="header-rightlist">
               <Settings onClick={this.settingsHandler}></Settings>
               {this.state.userSettings === true ? (
-                <div>
+                <div className="header-settingDropdown">
                   <a href="https://www.google.com">Change Password </a>
                   <a href="https://www.google.com">Account Settings</a>
                 </div>
@@ -75,22 +85,38 @@ export default class HeaderComponent extends React.Component<
                 ""
               )}
             </li>
+
+            <li className="header-rightlist">
+              <AccountCircleIcon
+                onClick={this.profileHandler}
+              ></AccountCircleIcon>
+              {this.state.userOptions === true ? (
+                <div className="header-profileDropdown">
+                  <a href="https://www.google.com">Add Another Account </a>
+                  <a href="https://www.google.com">
+                    Manage Your Google Account{" "}
+                  </a>
+                  <a href="https://www.google.com">Logout</a>
+                </div>
+              ) : (
+                ""
+              )}
+
+              <li className="header-rightlist">
+                {" "}
+                <div className="dropdown">
+                  <AccountCircleIcon></AccountCircleIcon>
+                  <div className="item">
+                    <a href="https://www.google.com">Add Another Account </a>
+                    <a href="https://www.google.com">
+                      Manage Your Google Account{" "}
+                    </a>
+                    <a href="https://www.google.com">Logout</a>
+                  </div>
+                </div>
+              </li>
+            </li>
           </div>
-          <li className="header-account-icon">
-            <AccountCircleIcon
-              className="header-icon"
-              onClick={this.profileHandler}
-            ></AccountCircleIcon>
-            {this.state.userOptions === true ? (
-              <div>
-                <a href="https://www.google.com">Add Another Account</a>
-                <a href="https://www.google.com">Manage Your Google Account</a>
-                <a href="https://www.google.com">Logout</a>
-              </div>
-            ) : (
-              ""
-            )}
-          </li>
         </ul>
       </div>
     );

@@ -1,20 +1,6 @@
 import React from "react";
 import SVGComponent from "../../SVGComponent/SVGComponent";
-import ComputerComponent from "./ComputerComponent/ComputerComponent";
 import "./DeletedComponent.scss";
-import Cleanup from "./EffectHook/Cleanup";
-import Counter from "./EffectHook/Counter";
-import EffectHook from "./EffectHook/EffectHook";
-import HookMouse from "./EffectHook/HookMouse";
-import LifeCycleDemo from "./LifeCycles/LifeCycles";
-import ReducerHook from "./ReducerHook/ReducerHook";
-import RefHook from "./RefHook/RefHook";
-import ArrayStateHook from "./StateHook/ArrayStateHook";
-import ObjectStateHook from "./StateHook/ObjectStateHook";
-import PreviousStateHook from "./StateHook/PreviousStateHook";
-import StateHook from "./StateHook/StateHook";
-import TestFunctionalComponent from "./TestFunctionalComponent/TestFunctionalComponent";
-
 export default class DeletedComponent extends React.Component {
   onClick = () => {
     console.log(this.refs.firstName);
@@ -31,33 +17,7 @@ export default class DeletedComponent extends React.Component {
 
   render() {
     return (
-      <div className="DeletedComponent">
-        <LifeCycleDemo />
-        <hr />
-        <RefHook />
-        <hr />
-        <Counter />
-        <hr />
-        <Cleanup />
-        <hr />
-        <HookMouse />
-        <hr />
-        <EffectHook />
-        <hr />
-        <ArrayStateHook />
-        <hr />
-        <ObjectStateHook />
-        <hr />
-        <PreviousStateHook />
-        <hr />
-        <StateHook />
-        <hr />
-        <ReducerHook />
-        <hr />
-        <TestFunctionalComponent />
-        <hr />
-        <ComputerComponent />
-        <hr />
+      <div className="DeletedComponent" data-testid="DeletedComponent">
         {/* <ul>
           {this.list.map((book: any, i: any) => (
             <TestFunctionalComponent

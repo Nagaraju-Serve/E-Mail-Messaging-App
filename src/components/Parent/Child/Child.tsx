@@ -27,7 +27,7 @@ class Child extends React.Component<{ parentCallback: any }, {}> {
 
   render() {
     return (
-      <div>
+      <div data-testid="Child">
         <form onSubmit={this.onTrigger}>
           <input type="submit" value="Submit" />
         </form>

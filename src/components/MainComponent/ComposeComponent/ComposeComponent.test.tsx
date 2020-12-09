@@ -6,6 +6,7 @@ import ComposeComponent from "./ComposeComponent";
 describe("<ComposeComponent />", () => {
   test("it should mount", () => {
     render(<ComposeComponent />);
+<<<<<<< Updated upstream
     const composeComponent = screen.getByTestId("ComposeComponent");
     expect(composeComponent).toBeInTheDocument();
   });
@@ -22,3 +23,11 @@ describe("input", () => {
     expect(Text).toHaveTextContent("Subject");
   });
 });
+=======
+
+    const composeComponent = screen.getByTestId("ComposeComponent");
+
+    expect(composeComponent).toBeInTheDocument();
+  });
+});
+>>>>>>> Stashed changes

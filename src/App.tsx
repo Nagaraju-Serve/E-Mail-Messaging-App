@@ -8,11 +8,16 @@ import Button_ from "./components/Button_/Button_";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" data-testid="App">
       <LoginComponent />
+<<<<<<< Updated upstream
       <FooterComponent />
       <Parent />
       <Button_ lable="Click Here" />
+=======
+      {/* <FooterComponent />
+      <Parent /> */}
+>>>>>>> Stashed changes
     </div>
   );
 }

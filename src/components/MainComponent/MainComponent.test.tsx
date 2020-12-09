@@ -1,6 +1,5 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import "./ComposeComponent/node_modules/@testing-library/jest-dom/extend-expect";
 import MainComponent from "./MainComponent";
 
 describe("<MainComponent />", () => {

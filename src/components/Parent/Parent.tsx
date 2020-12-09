@@ -39,7 +39,7 @@ class Parent extends React.Component<{}, { data: any }> {
   render() {
     const { data } = this.state;
     return (
-      <div>
+      <div data-testid="Parent">
         <Child parentCallback={this.handleCallback} />
         {data}
       </div>

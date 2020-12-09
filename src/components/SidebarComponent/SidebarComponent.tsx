@@ -27,7 +27,7 @@ export default class SidebarComponent extends React.Component<
 
   render() {
     return (
-      <div className="sidebar-main">
+      <div className="sidebar-main" data-testid="SidebarComponent">
         <HeaderComponent />
         <BrowserRouter>
           <ul className="sidebar-listItems">

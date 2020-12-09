@@ -20,12 +20,23 @@ export class FooterComponent extends Component<{}, IFooterComponentState> {
 
   greetParent(childName: any) {
     alert(`Hello ${this.state.parentName} from ${childName}`);
+    return `Hello ${this.state.parentName} from ${childName}`;
+  }
+
+  dataFunction() {
+    return 10;
   }
 
   render() {
     return (
-      <div>
+      <div data-testid="FooterComponent">
         <Child greetHandler={this.greetParent} />
+        <div>
+          <label htmlFor="checkbox" id="check">
+            Check
+          </label>
+          <input id="checkbox" type="checkbox" />
+        </div>
       </div>
     );
   }

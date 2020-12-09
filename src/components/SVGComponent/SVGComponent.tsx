@@ -115,6 +115,7 @@ const SVGIcon = ({
     xmlns="http://www.w3.org/2000/svg"
     viewBox={viewBox || getViewBox(name)}
     xmlnsXlink="http://www.w3.org/1999/xlink"
+    data-testid="SVGComponent"
   >
     {getPath(name, { fill })}
   </svg>

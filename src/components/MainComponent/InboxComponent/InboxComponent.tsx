@@ -50,10 +50,10 @@ export default class InboxComponent extends React.Component<
   render() {
     const { isLoaded, items } = this.state;
     if (!isLoaded) {
-      return <div>not loaded data</div>;
+      return <div data-testid="InboxComponent">not loaded data</div>;
     } else {
       return (
-        <div className="inbox-main">
+        <div className="inbox-main" data-testid="InboxComponent">
           <div className="inbox-header">
             <div className="inbox-checkbox">
               <input

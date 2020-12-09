@@ -1,7 +1,9 @@
 import React from "react";
-import { getByTestId, render, screen } from "@testing-library/react";
-import LoginComponent from "./LoginComponent";
 import "@testing-library/jest-dom/extend-expect";
+import { render, screen } from "@testing-library/react";
+import LoginComponent from "./LoginComponent";
+import renderer from "react-test-renderer";
+import userEvent from "@testing-library/user-event";
 
 describe("<LoginComponent />", () => {
   test("it should mount", () => {
@@ -10,6 +12,17 @@ describe("<LoginComponent />", () => {
     const loginComponent = screen.getByTestId("LoginComponent");
 
     expect(loginComponent).toBeInTheDocument();
+  });
+
+  test("Function Testing", () => {
+    let component: any = renderer.create(<LoginComponent />).getInstance();
+
+    const btn = screen.getByTestId("LoginButton");
+    const btnClick: any = userEvent.click(btn);
+    // expect(btn).toHaveAttribute("state", true);
+    const cdn: any = screen.getByTestId("login-container");
+    // let tree = component.loginHandler();
+    expect(cdn).toHaveAttribute("state", true);
   });
 });
 

@@ -73,7 +73,7 @@ export default class LoginComponent extends React.Component<
           </span>
         )}
         {this.state.showForm === true ? (
-          <div className="login-container">
+          <div className="login-container" data-testid="login-container">
             <h1>Welcome </h1>
             <form onSubmit={this.loginHandler}>
               <input
@@ -96,14 +96,14 @@ export default class LoginComponent extends React.Component<
               <button
                 type="submit"
                 className="login-button"
-                data-testid="button"
+                data-testid="LoginButton"
               >
                 Login
               </button>
             </form>
             <button
               type="submit"
-              className="login-button"
+              className="signup-button"
               onClick={this.signUpHandler}
             >
               SignUp

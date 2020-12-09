@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import "./InboxComponent.scss";
+import "./DetailedInboxComponent.scss";
 //import InboxData from './InboxData.json';
 
 export interface IDetailedInboxComponentProps {}
@@ -87,7 +87,7 @@ export default class DetailedInboxComponent extends React.Component<
     const { response, error } = this.state;
 
     return (
-      <div className="InboxComponent" data-testid="InboxComponent">
+      <div className="InboxComponent" data-testid="DetailedInboxComponent">
         {response.map((data: any, index: number) => {
           return (
             <div className="detailedinbox-card" key={index + 1}>

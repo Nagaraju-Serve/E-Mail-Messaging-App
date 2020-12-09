@@ -37,7 +37,7 @@ export default class SentItemsComponent extends React.Component<
     const { response } = this.state;
 
     return (
-      <div className="Sent-ItemsComponent" data-testid="SentItemsComponent">
+      <div className="Sent-ItemsComponent" data-testid="SentComponent">
         {response.map((data: any, index: number) => {
           return (
             <div className="sent-gridcontainer" key={index}>
